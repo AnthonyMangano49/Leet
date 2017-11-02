@@ -1,0 +1,11 @@
+//option 1 liner 
+// var isAnagram = (s,t) => s.split('').sort().join('') === t.split('').sort().join('');
+
+//option 2
+var alphaSort = function(str) {
+    return str.split('').sort().join('');
+}
+
+var isAnagram = function(s, t) {
+    return alphaSort(s) === alphaSort(t)
+};
