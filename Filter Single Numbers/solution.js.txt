@@ -1,0 +1,25 @@
+/**
+ * Given an array of integers, every element appears twice except for one. Find that single one.
+
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums)     
+    let single;
+    while(nums.length){
+        //get the number
+        let num = nums[0]
+        //remove first occurance of number
+        nums.splice(0,1);
+        //find index of second occurance
+        let idx = nums.indexOf(num)
+        //remove if it exists, else weve found the loaner
+        if(idx >= 0)
+            nums.splice(idx,1);
+        else {
+            single = num;
+            nums.length = 0;
+        }
+    }
+    return single;
+};
